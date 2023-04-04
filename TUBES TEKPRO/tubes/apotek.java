@@ -7,7 +7,7 @@ public class apotek{
         NoCustomer = noCustomer;
         this.jumlahuang = jumlahuang;
     }
-    private int jumlahuang;
+    private int jumlahUang;
 
     
 }
