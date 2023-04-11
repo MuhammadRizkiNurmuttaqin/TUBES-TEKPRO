@@ -13,47 +13,50 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import com.program.techie.model.Expense;
-import com.program.techie.service.ExpenseService;
+import com.program.techie.model.Obat;
+import com.program.techie.service.ObatService;
+
 
 
 @RestController
-@RequestMapping("/api/expense")
-public class ExpenseController {
+@RequestMapping("/api/Obat")
+public class ObatController {
 	
-	private final ExpenseService expenseService;
+	private final ObatService obatService;
 	
-	public ExpenseController(ExpenseService expenseService) {
-		this.expenseService = expenseService;
+	public ObatController(ObatService obatService) {
+		this.obatService = obatService;
 	}
 	
 	@PostMapping
-	public ResponseEntity<Expense> addExpense(@RequestBody Expense expense) {
-		expenseService.addExpense(expense);
+	public ResponseEntity<Obat> addObat(@RequestBody Obat obat) {
+		obatService.addObat(obat);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 	
 	@PutMapping
-	public ResponseEntity<Expense> updateExpense(@RequestBody Expense expense) {
-		expenseService.updateExpense(expense);
+	public ResponseEntity<Obat> updateObat(@RequestBody Obat obat) {
+		obatService.updateObat(obat);
 		return ResponseEntity.ok().build();
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Expense>> getAllExppenses() {
-		return ResponseEntity.ok(expenseService.getAllExpenses());
+	public ResponseEntity<List<Obat>> getAllObat() {
+		return ResponseEntity.ok(obatService.getAllObat());
 	}
 	
 	@GetMapping("/{name}")
-	public ResponseEntity<Expense> getExpenseByName(@PathVariable String name) {
-		return ResponseEntity.ok(expenseService.getExpenseByName(name));
+	public ResponseEntity<Obat> getObatByName(@PathVariable String name) {
+		return ResponseEntity.ok(obatService.getObatByName(name));
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Expense> deleteExpense(String id) {
-		expenseService.deleteExpense(id);
+	public ResponseEntity<Obat> deleteObat(@PathVariable String id) {
+		obatService.deleteObat(id);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
+
+	
 }
 
 

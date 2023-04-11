@@ -1,0 +1,7 @@
+Class Obat 
+	String Id
+	String Nama obat
+	String Keterangan obat
+	String Jenis obat
+	Int Stok
+	Int Harga
