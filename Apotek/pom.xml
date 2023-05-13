@@ -5,22 +5,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.5</version>
+		<version>3.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.program.techie</groupId>
-	<artifactId>spring-mongodb-tutorial</artifactId>
+	<groupId>com.main</groupId>
+	<artifactId>Apotek</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-mongodb-tutorial</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Apotek</name>
+	<description>Tugas Besar Database</description>
 	<properties>
-		<java.version>20</java.version>
-		<testcontainers.version>1.17.6</testcontainers.version>
+		<java.version>17</java.version>
+		<testcontainers.version>1.18.0</testcontainers.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
