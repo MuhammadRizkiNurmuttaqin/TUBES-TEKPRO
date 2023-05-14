@@ -16,7 +16,7 @@ import com.main.Apotek.service.ObatService;
 
 
 @Controller
-@RequestMapping("home")
+@RequestMapping
 public class ObatController {
 	
 	private final ObatService obatService;
@@ -26,12 +26,18 @@ public class ObatController {
 		this.obatService = obatService;
 	}
 	
-	@GetMapping("/daftar-obat")
-	public String tampilkanDaftarObat(Model model) {
+	@GetMapping("/redirect-daftar-obat")
+	public String redirectDaftarObat(Model model) {
 		List<Obat> obat = obatService.getAllObat();
-		model.addAttribute("listobat", obat);
+		model.addAttribute("obat", obat);
 	
 		return "daftar-obat";
+	}
+
+	@GetMapping("/redirect-tambah-obat")
+	public String redirectTambahObat(Model model) {
+		
+		return "tambah-obat";
 	}
 	
 	// @PostMapping("/addObat")
@@ -49,34 +55,21 @@ public class ObatController {
 	// 	return "daftarObat";
 	// }
 
-	// @PostMapping("/editObat")
-	// public String putObat(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga){
-	// 	Obat obat = obatService.getPaketById(id);
-	// 	BigDecimal Harga = new BigDecimal(harga);
-	// 	obat.setObatName(name);
-	// 	obat.setObatKeterangan(keterangan);
-	// 	obat.setObatCategory(ObatCategory.valueOf(category.toUpperCase()));
-	// 	obat.setObatAmount(Integer.parseInt(amount));
-	// 	obat.setObatHarga(Harga);
+	@PostMapping("/tambah-obat")
+	public String putObat(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga){
+		Obat obat = obatService.getPaketById(id);
+		BigDecimal Harga = new BigDecimal(harga);
+		obat.setObatName(name);
+		obat.setObatKeterangan(keterangan);
+		obat.setObatCategory(ObatCategory.valueOf(category.toUpperCase()));
+		obat.setObatAmount(Integer.parseInt(amount));
+		obat.setObatHarga(Harga);
 
-	// 	obatService.updateObat(obat);
+		obatService.updateObat(obat);
 
-	// 	return "daftarObat";
-	// }
+		return "daftar-obat";
+	}
 	
-
-
-	// @GetMapping("/tampilkanAddObat")
-	// public String tampilkanAddObat(Model model) {
-
-	// 	return "addObat";
-	// }
-
-	// @GetMapping("/tampilkanEditObat")
-	// public String tampilkanEditObat(Model model) {
-
-	// 	return "editObat";
-	// }
 
 	}
 

@@ -44,7 +44,7 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h6 class="u-custom-font u-font-merriweather u-text u-text-default u-text-1">Daftar Obat</h6>
         <p class="u-custom-font u-font-georgia u-text u-text-default u-text-2">add</p>
-        <a href="tambah-obat.html" class="u-btn u-button-style u-btn-1">Add</a>
+        <a th:href="@{/redirect-tambah-obat}" class="u-btn u-button-style u-btn-1">Add</a>
         <div class="u-table u-table-responsive u-table-1">
           <table class="u-table-entity u-table-entity-1">
             <colgroup>
@@ -68,50 +68,13 @@
               </tr>
             </thead>
             <tbody class="u-table-body">
-              <tr style="height: 75px;">
-                <td class="u-align-center u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 75px;">
-                <td class="u-align-center u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 75px;">
-                <td class="u-align-center u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 74px;">
-                <td class="u-align-center u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 75px;">
-                <td class="u-align-center u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
+              <tr style="height: 75px;" th:each="obat : ${obat}">
+                <td class="u-align-center u-border-1 u-border-black u-first-column u-table-cell" th:text="${obat.id}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatName}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatKeterangan}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatCategory}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatAmount}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatHarga}"></td>
               </tr>
             </tbody>
           </table>
