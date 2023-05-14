@@ -2,15 +2,14 @@
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ID, NAMA OBAT, JEN​​​IS, STOK, HARGA">
+    <meta name="keywords" content="Pesan Obat​">
     <meta name="description" content="">
-    <title>tambah obat</title>
-    <link rel="stylesheet" href="/nicepage.css" media="screen">
-<link rel="stylesheet" href="/tambah-obat.css" media="screen">
+    <title>pesan obat</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="pesan-obat.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
-    <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
@@ -28,9 +27,9 @@
     <meta name="theme-color" content="#478ac9">
     <meta name="twitter:site" content="@">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="tambah obat">
+    <meta name="twitter:title" content="pesan obat">
     <meta name="twitter:description" content="">
-    <meta property="og:title" content="tambah obat">
+    <meta property="og:title" content="pesan obat">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-2 u-border-grey-75 u-clearfix u-gradient u-header u-header" id="sec-c018"><div class="u-clearfix u-sheet u-sheet-1">
@@ -39,48 +38,91 @@
         </a>
         <p class="u-custom-font u-font-georgia u-text u-text-default u-text-1">Apotek Ultra​men</p>
       </div></header>
-    <section class="u-clearfix u-palette-5-base u-section-1" id="sec-f419">
+    <section class="u-clearfix u-section-1" id="sec-19b9">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Tambah Obat<span style="font-weight: 700;"></span>
+        <h2 class="u-align-center u-text u-text-default u-text-1">Pesan Obat<span style="font-weight: 700;"></span>
         </h2>
-        <div class="u-form u-form-1">
-          <form th:action="@{/tambah-obat}" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" name="form" style="padding: 10px;">
-            <div class="u-form-group u-form-name u-label-none u-form-group-1">
-              <label for="name-52ed" class="u-label">Name</label>
-              <input type="text" placeholder="Masukkan Nama Obat" id="name-52ed" name="name" class="u-input u-input-rectangle" required="">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-2">
-              <label for="text-25cb" class="u-label">Input</label>
-              <input type="text" placeholder="Masukan jenis obat" id="text-25cb" name="text" class="u-input u-input-rectangle">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-3">
-              <label for="text-d5fe" class="u-label">Input</label>
-              <input type="text" placeholder="Keterangan" id="text-d5fe" name="text-1" class="u-input u-input-rectangle">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-4">
-              <label for="text-cd2e" class="u-label">Input</label>
-              <input type="text" id="text-cd2e" name="text-2" class="u-input u-input-rectangle" placeholder="Jumlah ">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-5">
-              <label for="text-52e5" class="u-label">Input</label>
-              <input type="text" placeholder="Harga satuan" id="text-52e5" name="text-3" class="u-input u-input-rectangle">
-            </div>
-            <div class="u-align-right u-form-group u-form-submit u-label-none">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
-            </div>
-            <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-            <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
-            <input type="hidden" value="" name="recaptchaResponse">
-            <input type="hidden" name="formServices" value="18e7d0d3d41c9d47d8744d28e1a1fa53">
-          </form>
+        <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="16.6%">
+              <col width="16.6%">
+              <col width="16.6%">
+              <col width="16.6%">
+              <col width="16.6%">
+              <col width="17%">
+            </colgroup>
+            <thead class="u-palette-4-dark-1 u-table-header u-table-header-1">
+              <tr style="height: 69px;">
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">NAMA OBAT</th>
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">KETERANGAN</th>
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">JENIS</th>
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">HARGA</th>
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">PESAN</th>
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">KUANTITAS</th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              <tr style="height: 75px;">
+                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+                <td class="u-border-1 u-border-black u-table-cell"></td>
+              </tr>
+            </tbody>
+            <tfoot class="u-align-left u-table-footer">
+              <tr style="height: 74px;">
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell">Total Harga&nbsp;</td>
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
-        <h2 class="u-subtitle u-text u-text-2">KETERANGAN</h2>
-        <h2 class="u-subtitle u-text u-text-default u-text-3">JUMLAH</h2>
-        <h2 class="u-subtitle u-text u-text-4">&nbsp;NAMA OBAT</h2>
-        <h2 class="u-subtitle u-text u-text-5">&nbsp;JENIS</h2>
-        <h2 class="u-subtitle u-text u-text-default u-text-6">HARGA</h2>
-        <a href="daftar-obat.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-2"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
+        <div class="u-align-center u-container-style u-group u-palette-1-base u-group-1">
+          <div class="u-container-layout">
+            <p class="u-align-center u-text u-text-default u-text-2">sub<span style="font-weight: 400;"></span>mit
+            </p>
+          </div>
+        </div>
+        <a href="home.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
         </a>
       </div>
     </section>
