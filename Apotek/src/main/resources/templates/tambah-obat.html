@@ -5,12 +5,11 @@
     <meta name="keywords" content="ID, NAMA OBAT, JEN​​​IS, STOK, HARGA">
     <meta name="description" content="">
     <title>tambah obat</title>
-    <link rel="stylesheet" href="/nicepage.css" media="screen">
-<link rel="stylesheet" href="/tambah-obat.css" media="screen">
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="tambah-obat.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
-    <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
@@ -43,44 +42,51 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1">Tambah Obat<span style="font-weight: 700;"></span>
         </h2>
-        <div class="u-form u-form-1">
-          <form th:action="@{/tambah-obat}" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" name="form" style="padding: 10px;">
-            <div class="u-form-group u-form-name u-label-none u-form-group-1">
-              <label for="name-52ed" class="u-label">Name</label>
-              <input type="text" placeholder="Masukkan Nama Obat" id="name-52ed" name="name" class="u-input u-input-rectangle" required="">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-2">
-              <label for="text-25cb" class="u-label">Input</label>
-              <input type="text" placeholder="Masukan jenis obat" id="text-25cb" name="text" class="u-input u-input-rectangle">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-3">
-              <label for="text-d5fe" class="u-label">Input</label>
-              <input type="text" placeholder="Keterangan" id="text-d5fe" name="text-1" class="u-input u-input-rectangle">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-4">
-              <label for="text-cd2e" class="u-label">Input</label>
-              <input type="text" id="text-cd2e" name="text-2" class="u-input u-input-rectangle" placeholder="Jumlah ">
-            </div>
-            <div class="u-form-group u-label-none u-form-group-5">
-              <label for="text-52e5" class="u-label">Input</label>
-              <input type="text" placeholder="Harga satuan" id="text-52e5" name="text-3" class="u-input u-input-rectangle">
-            </div>
-            <div class="u-align-right u-form-group u-form-submit u-label-none">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
-            </div>
-            <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-            <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
-            <input type="hidden" value="" name="recaptchaResponse">
-            <input type="hidden" name="formServices" value="18e7d0d3d41c9d47d8744d28e1a1fa53">
-          </form>
-        </div>
         <h2 class="u-subtitle u-text u-text-2">KETERANGAN</h2>
         <h2 class="u-subtitle u-text u-text-default u-text-3">JUMLAH</h2>
         <h2 class="u-subtitle u-text u-text-4">&nbsp;NAMA OBAT</h2>
         <h2 class="u-subtitle u-text u-text-5">&nbsp;JENIS</h2>
         <h2 class="u-subtitle u-text u-text-default u-text-6">HARGA</h2>
-        <a href="daftar-obat.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-2"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
+        <div class="u-align-center u-form u-form-1">
+
+          <form th:action="@{/tambah-obat}" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" method="post">
+            <div class="u-form-group u-label-none u-form-group-1">
+              <label for="text-96f1" class="u-label">Input</label>
+              <input type="text" placeholder="Nama Obat" id="text-96f1" name="name" class="u-input u-input-rectangle">
+            </div>
+            <div class="u-form-group u-form-select u-label-none u-form-group-2">
+              <label for="select-1f3e" class="u-label">Dropdown</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-1f3e" name="category" class="u-input u-input-rectangle">
+                  <option value="KAPSUL" data-calc="">KAPSUL</option>
+                  <option value="TABLET" data-calc="">TABLET</option>
+                  <option value="SIRUP" data-calc="">SIRUP</option>
+                </select>
+                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+              </div>
+            </div>
+            <div class="u-form-group u-label-none">
+              <label for="text-996d" class="u-label">Input</label>
+              <input type="text" placeholder="Keterangan obat" id="text-996d" name="keterangan" class="u-input u-input-rectangle">
+            </div>
+            <div class="u-form-group u-label-none">
+              <label for="text-5d1a" class="u-label">Input</label>
+              <input type="text" placeholder="Jumlah obat" id="text-5d1a" name="amount" class="u-input u-input-rectangle">
+            </div>
+            <div class="u-form-group u-label-none">
+              <label for="text-9aeb" class="u-label">Input</label>
+              <input type="text" placeholder="Harga obat" id="text-9aeb" name="harga" class="u-input u-input-rectangle">
+            </div>
+            <div class="u-align-right u-form-group u-form-submit u-label-none">
+              <a th:action="@{/redirect-tambah-obat}" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <div class="u-form-send-message u-form-send-success">Obat berhasil ditambahkan !</div>
+            <div class="u-form-send-error u-form-send-message">Obat gagal ditambahkan. Coba lagi !</div>
+          </form>
+
+        </div>
+        <a th:href="@{/redirect-daftar-obat}" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-2"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
         </a>
       </div>
     </section>

@@ -45,16 +45,17 @@
         <h6 class="u-custom-font u-font-merriweather u-text u-text-default u-text-1">Daftar Obat</h6>
         <p class="u-custom-font u-font-georgia u-text u-text-default u-text-2">add</p>
         <a th:href="@{/redirect-tambah-obat}" class="u-btn u-button-style u-btn-1">Add</a>
-        <div class="u-table u-table-responsive u-table-1">
+        <div class="u-align-left u-table u-table-responsive u-table-1">
           <table class="u-table-entity u-table-entity-1">
             <colgroup>
-              <col width="12.81%">
-              <col width="17.42%">
-              <col width="14.55%">
-              <col width="19.92%">
-              <col width="9.15%">
-              <col width="10.8%">
-              <col width="15.3%">
+              <col width="6.1%">
+              <col width="20.2%">
+              <col width="12.7%">
+              <col width="17.3%">
+              <col width="8%">
+              <col width="16.1%">
+              <col width="10.4%">
+              <col width="9.2%">
             </colgroup>
             <thead class="u-align-center u-palette-4-dark-1 u-table-header u-table-header-1">
               <tr style="height: 82px;">
@@ -65,6 +66,7 @@
                 <th class="u-border-1 u-border-black u-table-cell">STOK</th>
                 <th class="u-border-1 u-border-black u-table-cell">HARGA</th>
                 <th class="u-border-1 u-border-black u-table-cell">EDIT</th>
+                <th class="u-border-1 u-border-black u-table-cell">Hapus</th>
               </tr>
             </thead>
             <tbody class="u-table-body">
@@ -75,29 +77,27 @@
                 <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatCategory}"></td>
                 <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatAmount}"></td>
                 <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatHarga}"></td>
+                <td class="u-border-1 u-border-black u-table-cell">
+                  <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2" th:href="@{/redirect-edit-obat}">Edit</a>
+                </td>
+                <td class="u-border-1 u-border-black u-table-cell">
+                  <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-2-base u-btn-3" href="https://nicepage.com">Delete<span style="font-size: 1rem;">
+                    <span style="font-size: 0.875rem;"></span>
+                    </span>
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="u-container-align-center u-container-style u-group u-palette-1-base u-shape-rectangle u-group-1" data-href="edit.html">
-          <div class="u-container-layout u-container-layout-1">
-            <p class="u-align-center u-custom-font u-font-georgia u-text u-text-default u-text-3">Edit </p>
-          </div>
-        </div>
-        <div class="u-container-style u-group u-palette-2-base u-shape-rectangle u-group-2">
-          <div class="u-container-layout u-container-layout-2">
-            <p class="u-align-center u-custom-font u-font-georgia u-text u-text-default u-text-4">Delete </p>
-          </div>
-        </div>
-        <a href="home.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-2"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
+        <a th:href="@{/}" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-4"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
         </a>
       </div>
     </section>
+    
     <section class="u-clearfix u-section-2" id="sec-830b">
       <div class="u-clearfix u-sheet u-sheet-1"></div>
     </section>
-    
-    
     <footer class="u-clearfix u-footer u-grey-80" id="sec-d55a"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">

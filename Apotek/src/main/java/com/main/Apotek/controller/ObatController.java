@@ -39,24 +39,27 @@ public class ObatController {
 		
 		return "tambah-obat";
 	}
-	
-	// @PostMapping("/addObat")
-	// public String addObat(@RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga) {
-		
-	// 	BigDecimal Harga = new BigDecimal(harga);
-	// 	Obat obat = new Obat(name, keterangan, ObatCategory.valueOf(category.toUpperCase()), Integer.parseInt(amount), Harga);
-	// 	obatService.addObat(obat);
-	// 	return "daftarObat";
-	// }
 
-	// @PostMapping("/deleteObat")
-	// public String delObat(@RequestParam("id") String id){
-	// 	obatService.deleteObat(id);
-	// 	return "daftarObat";
-	// }
+	@GetMapping("/redirect-edit-obat")
+	public String redirectEditObat(Model model) {
+		
+		return "edit-obat";
+	}
 
 	@PostMapping("/tambah-obat")
-	public String putObat(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga){
+	public String tambahObat(@RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga){
+		
+		BigDecimal Harga = new BigDecimal(harga);
+
+		Obat obat = new Obat(name, keterangan, ObatCategory.valueOf(category.toUpperCase()) , Integer.parseInt(amount), Harga);
+		
+		obatService.addObat(obat);
+
+		return "daftar-obat";
+	}
+
+	@PostMapping("/edit-obat")
+	public String tambahObat(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga){
 		Obat obat = obatService.getPaketById(id);
 		BigDecimal Harga = new BigDecimal(harga);
 		obat.setObatName(name);
@@ -70,6 +73,13 @@ public class ObatController {
 		return "daftar-obat";
 	}
 	
+	@PostMapping("/delete-obat")
+	public String delPaket(@RequestParam("id") String id) {
+		
+		obatService.deleteObat(id);
+		
+		return "daftar-obat";
+	}
 
 	}
 
