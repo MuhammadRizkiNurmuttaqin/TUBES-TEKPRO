@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.main.Apotek.model.Obat;
 import com.main.Apotek.model.ObatCategory;
@@ -79,12 +80,12 @@ public class ObatController {
 		return "daftar-obat";
 	}
 	
-	@PostMapping("/delete-obat")
-	public String delPaket(@RequestParam("id") String id) {
+	@GetMapping("/delete-obat/{id}")
+	public String deleteObat(@PathVariable("id") String id) {
 		
 		obatService.deleteObat(id);
 		
-		return "daftar-obat";
+		return "redirect:/redirect-daftar-obat";
 	}
 
 	}
