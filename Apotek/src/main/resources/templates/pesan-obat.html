@@ -45,17 +45,15 @@
         <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
-              <col width="16.6%">
-              <col width="16.6%">
-              <col width="16.6%">
-              <col width="16.6%">
-              <col width="16.6%">
-              <col width="17%">
+              <col width="19.9%">
+              <col width="19.9%">
+              <col width="19.9%">
+              <col width="19.9%">
+              <col width="20.4%">
             </colgroup>
             <thead class="u-palette-4-dark-1 u-table-header u-table-header-1">
               <tr style="height: 69px;">
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">NAMA OBAT</th>
-                <th class="u-align-center u-border-1 u-border-black u-table-cell">KETERANGAN</th>
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">JENIS</th>
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">HARGA</th>
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">PESAN</th>
@@ -63,51 +61,34 @@
               </tr>
             </thead>
             <tbody class="u-table-body">
-              <tr style="height: 75px;">
-                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-black u-first-column u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
-                <td class="u-border-1 u-border-black u-table-cell"></td>
+              <tr style="height: 75px;" th:each="obat : ${obat}">
+                <td class="u-align-center u-border-1 u-border-black u-first-column u-table-cell" th:text="${obat.obatName}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatCategory}"></td>
+                <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatHarga}"></td>
+                <td class="u-border-1 u-border-black u-table-cell">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    </label>
+                  </div>
+                </td>
+                <td class="u-border-1 u-border-black u-table-cell">
+                  <input type="number" id="quantity" min="0" value="0" onchange="updateTotal()">
+                  <script>
+                    function updateTotal() {
+                      var quantity = parseInt(document.getElementById('quantity').value);
+                      var nominal = 100; // Jumlah nominal yang diinginkan
+      
+                      var total = quantity * nominal;
+                      console.log('Total: ' + total); 
+                    }
+                  </script>
+                </td>
               </tr>
             </tbody>
             <tfoot class="u-align-left u-table-footer">
               <tr style="height: 74px;">
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell">Total Harga&nbsp;</td>
-                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>

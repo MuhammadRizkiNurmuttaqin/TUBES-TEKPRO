@@ -42,11 +42,9 @@ public class ObatController {
 		return "tambah-obat";
 	}
 
-	@GetMapping(path = {"/edit/{id}"})
-	public String redirectEditObat(Model model, @PathVariable("id") String id) {
-		if(id.isEmpty()){
-			Mono<Obat> obat = ObatRepository
-		}
+	@GetMapping("/pesan-obat")
+	public String redirectEditObat(Model model) {
+		
 		return "edit-obat";
 	}
 
