@@ -46,6 +46,12 @@ public class ObatController {
 		return "edit-obat";
 	}
 
+	@GetMapping("/redirect-pesan-obat")
+	public String redirectPesanObat(Model model) {
+		
+		return "pesan-obat";
+	}
+
 	@PostMapping("/tambah-obat")
 	public String tambahObat(@RequestParam("name") String name, @RequestParam("keterangan") String keterangan, @RequestParam("category") String category, @RequestParam("amount") String amount, @RequestParam("harga") String harga){
 		
