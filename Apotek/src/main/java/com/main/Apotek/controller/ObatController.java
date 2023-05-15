@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.main.Apotek.model.Obat;
 import com.main.Apotek.model.ObatCategory;
+import com.main.Apotek.repository.ObatRepository;
 import com.main.Apotek.service.ObatService;
 
 
@@ -41,9 +42,11 @@ public class ObatController {
 		return "tambah-obat";
 	}
 
-	@GetMapping("/redirect-edit-obat")
-	public String redirectEditObat(Model model) {
-		
+	@GetMapping(path = {"/edit/{id}"})
+	public String redirectEditObat(Model model, @PathVariable("id") String id) {
+		if(id.isEmpty()){
+			Mono<Obat> obat = ObatRepository
+		}
 		return "edit-obat";
 	}
 

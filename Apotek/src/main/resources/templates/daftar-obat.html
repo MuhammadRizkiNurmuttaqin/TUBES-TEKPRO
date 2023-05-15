@@ -78,7 +78,7 @@
                 <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatAmount}"></td>
                 <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatHarga}"></td>
                 <td class="u-border-1 u-border-black u-table-cell">
-                  <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2" th:href="@{/redirect-edit-obat}">Edit</a>
+                  <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2" th:href="@{/edit/{id}(id=$(obat.id))}">Edit</a>
                 </td>
                 <td class="u-border-1 u-border-black u-table-cell">
                   <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-2-base u-btn-3" th:href="@{'/delete-obat/' + ${obat.id}}">Delete<span style="font-size: 1rem;">
