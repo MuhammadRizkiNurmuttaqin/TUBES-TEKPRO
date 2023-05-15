@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitung Total Harga</title>
+  <script>
+    function hitungTotalHarga() {
+      // Mendapatkan referensi elemen-elemen yang diperlukan
+      var checkboxes = document.getElementsByName('produk');
+      var quantityInputs = document.getElementsByName('quantity');
+      var totalHarga = 0;
+
+      // Menghitung total harga berdasarkan pilihan checkbox dan quantity
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          var hargaProduk = parseInt(checkboxes[i].value);
+          var quantity = parseInt(quantityInputs[i].value);
+          totalHarga += hargaProduk * quantity;
+        }
+      }
+
+      // Menampilkan total harga pada elemen dengan id 'totalHarga'
+      document.getElementById('totalHarga').textContent = 'Total Harga: $' + totalHarga.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Hitung Total Harga</h1>
+
+  <form>
+    <input type="checkbox" name="produk" value="10"> Produk A
+    <input type="number" name="quantity" value="0" min="0"><br>
+    <input type="checkbox" name="produk" value="15"> Produk B
+    <input type="number" name="quantity" value="0" min="0"><br>
+    <input type="checkbox" name="produk" value="20"> Produk C
+    <input type="number" name="quantity" value="0" min="0"><br>
+
+    <button type="button" onclick="hitungTotalHarga()">Hitung</button>
+  </form>
+
+  <p id="totalHarga"></p>
+</body>
+</html>

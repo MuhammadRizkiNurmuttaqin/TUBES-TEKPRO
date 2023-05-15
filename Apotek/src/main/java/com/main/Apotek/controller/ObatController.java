@@ -37,20 +37,16 @@ public class ObatController {
 	}
 
 	@GetMapping("/redirect-tambah-obat")
-	public String redirectTambahObat(Model model) {
+	public String redirectTambahObat() {
 		
 		return "tambah-obat";
 	}
 
-	@GetMapping("/pesan-obat")
-	public String redirectEditObat(Model model) {
-		
-		return "edit-obat";
-	}
-
 	@GetMapping("/redirect-pesan-obat")
 	public String redirectPesanObat(Model model) {
-		
+		List<Obat> obat = obatService.getAllObat();
+		model.addAttribute("obat", obat);
+
 		return "pesan-obat";
 	}
 
@@ -88,7 +84,8 @@ public class ObatController {
 		
 		return "redirect:/redirect-daftar-obat";
 	}
-	//dfasdfasdfasdfasdfa
-	}
+	
 
+	}
+  
 
