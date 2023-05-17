@@ -18,8 +18,8 @@ public class ObatService {
 		obatRepository.insert(obat);
 	}
 
-	public Obat getPaketById(String id) {
-		return obatRepository.findById(id).orElseThrow(() -> new RuntimeException(String.format("Cannot Find Expense by ID %s", id)));
+	public Obat getObatById(String id) {
+		return obatRepository.findById(id).orElseThrow(() -> new RuntimeException(String.format("Cannot Find Obat by ID %s", id)));
 	}
 
 	public void updateObat(Obat obat) {

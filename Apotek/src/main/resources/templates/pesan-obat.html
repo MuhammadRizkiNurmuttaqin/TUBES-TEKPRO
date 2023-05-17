@@ -61,16 +61,21 @@
               </tr>
               <script>
                 function hitungTotalHarga() {
-                  var checkboxes = document.getElementByName(parseInt('hargaProduk'));
-                  var quantityInputs = document.getElementByName('quantity');
+                  var checkboxes = document.getElementById('hargaProduk').innerHTML;
+                  var quantityInputs = document.getElementById('quantity').innerHTML;
                   var totalHarga = 0;
   
                   // Menghitung total harga
                   for (var i = 0; i < checkboxes.length; i++){
-                    var hargaProduk = parseInt(checkboxes[i].value);
-                    var quantity = parseInt(quantityInputs[i].value);
+                    var hargaProduk = parseInt(checkboxes.value);
+                    var quantity = parseInt(quantityInputs.value);
                     totalHarga += hargaProduk * quantity;
+                    console.log(hargaProduk);
                   } 
+
+                  document.getElementById("total-harga").innerHTML = "Total Harga: " + totalHarga;
+        
+                  console.log(quantityInputs);
                 }
               </script>
             </thead>
@@ -81,11 +86,11 @@
                 <td class="u-border-1 u-border-black u-table-cell" th:text="${obat.obatHarga}"></td>
                 <td class="u-border-1 u-border-black u-table-cell">
                   <div class="form-check">
-                    <input type="checkbox" name="hargaProduk" th:value="${obat.obatHarga}" onchange="hitungTotalHarga()">
+                    <input type="checkbox" id="hargaProduk" th:value="${obat.obatHarga}"  onchange="hitungTotalHarga()" >
                   </div>
                 </td>
                 <td class="u-border-1 u-border-black u-table-cell">
-                  <input type="number" name="quantity" value="0" min="0" onchange="hitungTotalHarga()"><br>
+                  <input type="number" id="quantity" value="0" min="0" onchange="hitungTotalHarga()"><br>
                 </td>
               </tr>
             </tbody>
@@ -93,7 +98,7 @@
             <tfoot class="u-align-left u-table-footer">
               <tr style="height: 74px;">
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell" id= "totalHarga"> Total Harga : </td>
+                <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell" id= "total-harga"> Total Harga : </td>
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></td>
                 <td class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-table-cell">
@@ -102,12 +107,8 @@
             </tfoot>
           </table>
         </div>
-        <div class="u-align-center u-container-style u-group u-palette-1-base u-group-1">
-          <div class="u-container-layout">
-            <p class="u-align-center u-text u-text-default u-text-2">sub<span style="font-weight: 400;"></span>mit
-            </p>
-          </div>
-        </div>
+            <a href="#" class="u-align-right u-text u-text-default u-text-2 u-btn u-btn-submit u-button-style">submit<span style="font-weight: 400;"></span>
+            </a>
         <a th:href="@{/}" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/2879564.png" alt=""></span>&nbsp;back
         </a>
       </div>

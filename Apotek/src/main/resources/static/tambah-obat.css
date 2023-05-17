@@ -2,6 +2,10 @@
   min-height: 732px;
 }
 
+.u-form-send-error {
+  background: turquoise;
+}
+
 .u-section-1 .u-text-1 {
   margin: 23px auto 0;
 }
@@ -137,3 +141,4 @@
     margin-right: 152px;
   }
 }
+
